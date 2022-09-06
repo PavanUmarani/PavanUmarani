@@ -1,0 +1,55 @@
+sales order create(salesordercreate_bulk_new.html,salesordercreate_bulk_new.js) screen:
+
+a). Requirement Overview
+
+-> then need to add one customer field(autocomplete) with add(+) button (for new costomer)
+    
+
+-> when you clicked on add(+) page is redirected to btobcustomer_new.html
+
+-> add item button needs to be added for the particular customer which we got through the customer field for selecting items,
+   which must validate through customer field 
+
+-> when we click on add item button a add material pop up needs to be opened for customer to add material
+
+-> once customer adds the material those materials should displayed in salesordercreate_bulk_new.html page
+
+
+b). create a table and displays values using given URL
+
+	1)Add:
+
+		when you clicked on add customer button it will redirected to btobcustomer_new.html for adding new customer 
+
+                when you clicked on add item button it calls the following url for materials 
+
+
+		strUrl = request_url_ro + "materialMST/getMatListByVehicleDetails/" + sessionStorage.getItem("companyBranch") + "///"+mainCategoryId +"/"+FOUR_WHEELER
+
+                when customer added the material and clicked on override and save order it will save the all data at below url
+                "salesOrder/updateSalesOrderWithItems"
+			
+	2)Edit:
+               customer can edit the material quntity at table in salesordercreate_bulk_new.html page
+			
+	3)Delete:
+
+		 customer can delete the materials in table by clicking on X in salesordercreate_bulk_new.html page
+		
+	4)Read/View:
+		
+                  * URL path:url for customer field is "companyBranch/getServerDateTime" 
+                    *data will be dynamically fetched and displayed in the customer input field 
+                    *table cantains of 10 columns which stores the different objectives of the particular selected material and some basic oparations like edit and delete
+                    1.Delete
+                    2.Category
+                    3.	Product Code
+                    4.Brand
+                    5.HSN Code
+                    6.Product Name
+                    7.MRP
+                    8.Disc 
+                    9.Unit Price
+                    10.Quantity
+                    
+
